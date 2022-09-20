@@ -8,7 +8,6 @@
 #include <iostream>
 using namespace std;
 
-// Student data structure
 struct STUDENT_DATA {
 	string firstname;
     string lastname;
@@ -34,6 +33,13 @@ int main() {
 			data.push_back(student);
 		}
 	}
+
+	#ifdef _DEBUG
+	for (int i = 0; i < data.size(); i++) {
+		STUDENT_DATA readStudent = data.at(i);
+		cout << "Name: " << readStudent.firstname << " " << readStudent.lastname << endl;
+	}
+	#endif 
 
 	return 1;
 }
